@@ -78,10 +78,10 @@ class UnionFind {
      * @return {number}
      */
     findParent(index) {
-        while (this.parent[index] !== index) {
-            index = this.parent[this.parent[index]];
+        if (this.parent[index] !== index) {
+            this.parent[index] = this.findParent(this.parent[index]);
         }
-        return this.parent[index];
+        return parent[index];
     }
 
     /**
