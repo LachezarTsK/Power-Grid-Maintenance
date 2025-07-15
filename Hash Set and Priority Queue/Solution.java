@@ -69,8 +69,8 @@ class UnionFind {
     }
 
     int findParent(int index) {
-        while (parent[index] != index) {
-            index = parent[parent[index]];
+        if (parent[index] != index) {
+            parent[index] = findParent(parent[index]);
         }
         return parent[index];
     }
