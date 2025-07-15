@@ -1,4 +1,12 @@
 
+// const {PriorityQueue} = require('@datastructures-js/priority-queue');
+/*
+ PriorityQueue is internally included in the solution file on leetcode.
+ When running the code on leetcode it should stay commented out. 
+ It is mentioned here just for information about the external library 
+ that is applied for this data structure.
+ */
+
 // Power Stations have 1‑based indexing.
 function processQueries(numberOfPowerStations: number, connections: number[][], queries: number[][]): number[] {
     const unionFind = new UnionFind(numberOfPowerStations);
@@ -56,8 +64,8 @@ class UnionFind {
     }
 
     findParent(index: number): number {
-        while (this.parent[index] !== index) {
-            index = this.parent[this.parent[index]];
+        if (this.parent[index] != index) {
+            this.parent[index] = this.findParent(this.parent[index]);
         }
         return this.parent[index];
     }
