@@ -3,11 +3,11 @@ Challenge at LeetCode.com. Tags: Union Find, Graph, Heap, Priority Queue, Hash S
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-The presented solution is in two variants, depending on way the information about operational stations is processed.
+The presented solution is in two variants, depending on the way the information about operational stations is processed.
 
 **Variant 1**
 
-The most up to date information about the operational stations is stored in a Hash Set. To access quickly the operational station with the smallest ID (if the station taken for maintenance is off grid), a Priority Queue also stores the operational stations ID. 
+The most up to date information about the operational stations is stored in a Hash Set. To quickly access the operational station with the smallest ID (if the station taken for maintenance is off grid), a Priority Queue also stores the operational stations ID.
 
 However, the information stored in the Priority Queue is not necessarily up to date. It is updated lazily. When the operational station with the smallest ID is needed and the station at the top the Priority Queue is also contained in the Hash Set, then the ID of this station is returned. Otherwise, the Priority Queue pops up stations until the station at the top is also contained in the Hash Set. If there are no operational stations left, the answer is -1.
 
