@@ -70,8 +70,8 @@ func NewUnionFind(numberOfPowerStations int) UnionFind {
 }
 
 func (this *UnionFind) findParent(index int) int {
-    for this.parent[index] != index {
-        index = this.parent[this.parent[index]]
+    if this.parent[index] != index {
+        this.parent[index] = this.findParent(this.parent[index])
     }
     return this.parent[index]
 }
