@@ -1,4 +1,12 @@
 
+// const {PriorityQueue} = require('@datastructures-js/priority-queue');
+/*
+ PriorityQueue is internally included in the solution file on leetcode.
+ When running the code on leetcode it should stay commented out. 
+ It is mentioned here just for information about the external library 
+ that is applied for this data structure.
+ */
+
 /**
  * @param {number} numberOfPowerStations
  * @param {number[][]} connections
