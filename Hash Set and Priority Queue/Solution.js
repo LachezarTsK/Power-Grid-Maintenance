@@ -89,7 +89,7 @@ class UnionFind {
         if (this.parent[index] !== index) {
             this.parent[index] = this.findParent(this.parent[index]);
         }
-        return parent[index];
+        return this.parent[index];
     }
 
     /**
