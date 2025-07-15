@@ -71,11 +71,10 @@ class UnionFind(private val numberOfPowerStations: Int) {
     private var rank: IntArray = IntArray(numberOfPowerStations + 1) { 1 }
 
     fun findParent(index: Int): Int {
-        var index = index
-        while (parent[index] != index) {
-            index = parent[parent[index]]
+        if (parent[index] != index) {
+            parent[index] = findParent(parent[index]);
         }
-        return parent[index]
+        return parent[index];
     }
 
     fun joinByRank(indexOne: Int, indexTwo: Int) {
