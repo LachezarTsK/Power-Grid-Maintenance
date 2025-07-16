@@ -78,7 +78,7 @@ class UnionFind
     {
         if (parent[index] != index)
         {
-            parent[index] = FindParent(parent[index];
+            parent[index] = FindParent(parent[index]);
         }
         return parent[index];
     }
