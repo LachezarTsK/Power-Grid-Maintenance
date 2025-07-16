@@ -15,7 +15,7 @@ Variant 1 is implemented in Java, JavaScript, TypeScript, C++, C#, Kotlin and Go
  
 **Variant 2**
 
-Similar to Variant 1, but in this case, the most up to date information about the operational stations is stored in a Boolean Array instead of a Hash Set. Here the Boolean Array is implemented for all the stations, i.e. there is only one Boolean Array that encompasses all the closed grids, as opposed to Variant 1, where each closed grid has its own Hash Set. And similar to Variant 1, each closed grid has its own Priority Queue.
+Similar to Variant 1, but in this case, the most up to date information about the operational stations is stored in a Boolean Array instead of a Hash Set. Here, the Boolean Array is implemented for all the stations, i.e. there is only one Boolean Array that encompasses all the closed grids, as opposed to Variant 1, where each closed grid has its own Hash Set. And similar to Variant 1, each closed grid has its own Priority Queue.
 
 Variant 1 can also be implemented with only one Hash Set that encompasses all closed grids, which could slightly improve its efficiency. On the other hand, if Variant 2 is implemented like Variant 1, i.e. there is a Boolean Array for each closed grid, this will significantly decrease its efficiency, to the degree that such an implementation will exceed the memory limits given by Leetcode for the solution of this problem.
 
