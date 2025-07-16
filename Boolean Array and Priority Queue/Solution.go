@@ -64,8 +64,8 @@ type UnionFind struct {
 
 func NewUnionFind(numberOfPowerStations int) UnionFind {
     uf := UnionFind{
-        parent: make([]int, numberOfPowerStations + 1),
-        rank:   make([]int, numberOfPowerStations + 1),
+        parent: make([]int, numberOfPowerStations+1),
+        rank:   make([]int, numberOfPowerStations+1),
     }
     for i := 0; i <= numberOfPowerStations; i++ {
         uf.parent[i] = i
@@ -75,8 +75,8 @@ func NewUnionFind(numberOfPowerStations int) UnionFind {
 }
 
 func (this *UnionFind) findParent(index int) int {
-    for this.parent[index] != index {
-        index = this.parent[this.parent[index]]
+    if this.parent[index] != index {
+        this.parent[index] = this.findParent(this.parent[index])
     }
     return this.parent[index]
 }
