@@ -76,9 +76,9 @@ class UnionFind
 
     public int FindParent(int index)
     {
-        while (parent[index] != index)
+        if (parent[index] != index)
         {
-            index = parent[parent[index]];
+            parent[index] = FindParent(parent[index];
         }
         return parent[index];
     }
